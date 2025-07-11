@@ -10,179 +10,238 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     color: #333333;
     min-height: 100vh;
     line-height: 1.6;
 }
 
-/* Header and logo */
-.hero-section {
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    color: #ffffff;
+    padding: 4rem 2rem;
     text-align: center;
-    padding: 3rem 1rem 2rem;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e9ecef;
+    overflow: hidden;
 }
 
-.logo-container {
-    max-width: 600px;
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 /* NEONIX Branding */
 .neonix-branding {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-out;
 }
 
 .neonix-logo-img {
-    height: 40px;
+    height: 80px;
     width: auto;
     display: block;
-    margin: 0 auto 0.3rem;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    margin: 0 auto 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.neonix-logo-img:hover {
+    transform: scale(1.05);
 }
 
 .presents {
-    font-size: 0.9rem;
-    color: #6c757d;
-    font-weight: 400;
+    font-size: 1.1rem;
+    color: #cccccc;
+    font-weight: 300;
     font-style: italic;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
     margin: 0;
+}
+
+/* Main Title */
+.main-title {
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .band-logo {
     font-family: 'Inter', sans-serif;
-    font-size: 3rem;
-    font-weight: 600;
-    color: #333333;
-    letter-spacing: 0.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .tagline {
-    font-size: 1.1rem;
-    color: #6c757d;
+    font-size: 1.3rem;
+    color: #e0e0e0;
     font-weight: 400;
+    letter-spacing: 0.05rem;
     margin-bottom: 0;
 }
 
 /* Main container */
 .container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 700px;
+    margin: -3rem auto 0;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 3;
 }
 
 /* Nomination card */
 .nomination-card {
-    background: #ffffff;
-    border: 1px solid #e9ecef;
-    border-radius: 12px;
-    padding: 2.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.05);
+    animation: slideInUp 1s ease-out 0.4s both;
 }
 
 .section-title {
     font-family: 'Inter', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 700;
     text-align: center;
-    color: #333333;
+    color: #1a1a1a;
     margin-bottom: 1rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .description {
     text-align: center;
-    color: #6c757d;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    line-height: 1.5;
+    color: #666666;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 /* Form styles */
 .nomination-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+    gap: 2rem;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
+    gap: 0.75rem;
 }
 
 label {
-    font-weight: 500;
-    color: #333333;
-    font-size: 1rem;
-    text-align: center;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    text-align: left;
+    margin-left: 0.5rem;
 }
 
 .song-selector,
 .text-input {
-    padding: 0.875rem;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 16px;
     background: #ffffff;
     color: #333333;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: 'Inter', sans-serif;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .song-selector:focus,
 .text-input:focus {
     outline: none;
     border-color: #6f42c1;
-    box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.1);
+    box-shadow: 
+        0 0 0 4px rgba(111, 66, 193, 0.1),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .song-selector option {
     background: #ffffff;
     color: #333333;
-    padding: 0.5rem;
-    text-align: left;
+    padding: 1rem;
 }
 
 .text-input::placeholder {
-    color: #adb5bd;
-    text-align: center;
+    color: #999999;
+    font-weight: 400;
 }
 
 /* Submit button */
 .submit-btn {
-    background: #6f42c1;
+    background: linear-gradient(135deg, #6f42c1 0%, #5a32a3 100%);
     border: none;
-    border-radius: 6px;
-    padding: 1rem 2rem;
+    border-radius: 16px;
+    padding: 1.5rem 3rem;
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: #ffffff;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    margin: 0.5rem auto 0;
+    transition: all 0.3s ease;
+    margin: 1rem auto 0;
     align-self: center;
-    max-width: 300px;
+    min-width: 280px;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    box-shadow: 
+        0 8px 24px rgba(111, 66, 193, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .submit-btn:hover {
-    background: #5a32a3;
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #5a32a3 0%, #4a2890 100%);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 32px rgba(111, 66, 193, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .submit-btn:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
+    box-shadow: 
+        0 6px 20px rgba(111, 66, 193, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .submit-btn:disabled {
-    background: #6c757d;
+    background: #999999;
     cursor: not-allowed;
     transform: none;
+    box-shadow: none;
 }
 
 .btn-text {
@@ -191,34 +250,71 @@ label {
 
 /* Messages */
 .message {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border-radius: 6px;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 16px;
     text-align: center;
     font-weight: 500;
+    font-size: 1.1rem;
+    animation: slideInUp 0.3s ease;
 }
 
 .success-message {
-    background: #d1edff;
-    color: #0c5460;
-    border: 1px solid #b6effb;
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 4px 12px rgba(21, 87, 36, 0.1);
 }
 
 .error-message {
-    background: #f8d7da;
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
     color: #721c24;
     border: 1px solid #f5c6cb;
+    box-shadow: 0 4px 12px rgba(114, 28, 36, 0.1);
 }
 
 /* Footer */
 .footer {
     text-align: center;
-    padding: 2rem 1rem;
-    color: #6c757d;
-    font-size: 1rem;
-    background-color: #ffffff;
-    border-top: 1px solid #e9ecef;
-    margin-top: 3rem;
+    padding: 3rem 1rem;
+    color: #666666;
+    font-size: 1.1rem;
+    background: transparent;
+    margin-top: 4rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Utility classes */
@@ -228,51 +324,88 @@ label {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .hero-banner {
+        padding: 3rem 1rem;
+    }
+    
     .neonix-logo-img {
-        height: 35px;
+        height: 60px;
     }
     
     .band-logo {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     
-    .section-title {
-        font-size: 1.5rem;
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .container {
+        margin: -2rem auto 0;
+        padding: 0 1rem;
     }
     
     .nomination-card {
-        padding: 1.5rem;
-        margin: 1rem;
+        padding: 2rem;
+        border-radius: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
     }
     
     .submit-btn {
-        font-size: 0.95rem;
-        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+        padding: 1.25rem 2.5rem;
+        min-width: 240px;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-section {
-        padding: 2rem 1rem 1.5rem;
+    .hero-banner {
+        padding: 2.5rem 1rem;
     }
     
     .neonix-logo-img {
-        height: 30px;
+        height: 50px;
     }
     
     .band-logo {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        letter-spacing: 0.1rem;
     }
     
     .tagline {
         font-size: 1rem;
     }
     
+    .container {
+        margin: -1.5rem auto 0;
+        padding: 0 0.5rem;
+    }
+    
     .nomination-card {
-        padding: 1rem;
+        padding: 1.5rem;
+        border-radius: 16px;
     }
     
     .section-title {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
+    }
+    
+    .form-group {
+        gap: 0.5rem;
+    }
+    
+    .song-selector,
+    .text-input {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .submit-btn {
+        font-size: 0.95rem;
+        padding: 1.125rem 2rem;
+        min-width: 200px;
     }
 }
