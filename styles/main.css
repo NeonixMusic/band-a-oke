@@ -34,17 +34,12 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.neonix-logo {
-    background: #000000;
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.3rem;
-    padding: 0.5rem 2rem;
-    display: inline-block;
-    margin-bottom: 0.3rem;
-    transform: skew(-5deg);
+.neonix-logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0 auto 0.3rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .presents {
@@ -233,10 +228,8 @@ label {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .neonix-logo {
-        font-size: 1rem;
-        letter-spacing: 0.2rem;
-        padding: 0.4rem 1.5rem;
+    .neonix-logo-img {
+        height: 35px;
     }
     
     .band-logo {
@@ -263,10 +256,8 @@ label {
         padding: 2rem 1rem 1.5rem;
     }
     
-    .neonix-logo {
-        font-size: 0.9rem;
-        letter-spacing: 0.15rem;
-        padding: 0.3rem 1rem;
+    .neonix-logo-img {
+        height: 30px;
     }
     
     .band-logo {
