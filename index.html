@@ -3,30 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bandeoki Song Selection</title>
+    <title>Band-a-oke | Song Nomination</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Bandeoki Song Selection</h1>
-        <form id="nomination-form">
-            <label for="song-select">Choose a song:</label>
-            <select id="song-select" name="song">
-                <option value="">-- Select a song --</option>
-                <!-- Options will be populated here by JavaScript -->
-            </select>
+    <div class="background-overlay"></div>
+    
+    <header class="hero-section">
+        <div class="logo-container">
+            <h1 class="band-logo">BAND-A-OKE</h1>
+            <p class="tagline">🎤 Your Voice, Our Stage 🎸</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="nomination-card">
+            <h2 class="section-title">🎵 Request Your Song 🎵</h2>
+            <p class="description">Choose a song from our setlist and get ready to rock the stage!</p>
             
-            <label for="name-input">Your Name:</label>
-            <input type="text" id="name-input" name="name" required>
+            <form id="nomination-form" class="nomination-form">
+                <div class="form-group">
+                    <label for="song-select">🎶 Choose Your Song:</label>
+                    <select id="song-select" name="song" class="song-selector">
+                        <option value="">-- Select a song --</option>
+                        <!-- Options will be populated here by JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name-input">🎤 Your Name:</label>
+                    <input type="text" id="name-input" name="name" required class="text-input" placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="additional-names">👥 Backup Singers (optional):</label>
+                    <input type="text" id="additional-names" name="additionalNames" placeholder="e.g., John, Sarah, Mike" class="text-input">
+                </div>
+                
+                <button type="submit" id="submit-button" class="submit-btn">
+                    <span class="btn-text">🚀 NOMINATE FOR BAND-A-OKE! 🚀</span>
+                </button>
+            </form>
             
-            <label for="additional-names">Additional Names (optional):</label>
-            <input type="text" id="additional-names" name="additionalNames" placeholder="e.g., John, Sarah, Mike">
-            
-            <input type="submit" id="submit-button" value="Nominate for Bandeoki!">
-        </form>
-        
-        <div id="confirmation-message" class="hidden"></div>
-    </div>
+            <div id="confirmation-message" class="hidden message"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>🎸 Ready to rock? Let's make some music! 🥁</p>
+    </footer>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
