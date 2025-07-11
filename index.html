@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeoki Song Selection</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bandeoki Song Selection</h1>
+        <form id="nomination-form">
+            <label for="song-select">Choose a song:</label>
+            <select id="song-select" name="song">
+                <option value="">-- Select a song --</option>
+                <!-- Options will be populated here by JavaScript -->
+            </select>
+            
+            <label for="name-input">Your Name:</label>
+            <input type="text" id="name-input" name="name" required>
+            
+            <label for="additional-names">Additional Names (optional):</label>
+            <input type="text" id="additional-names" name="additionalNames" placeholder="e.g., John, Sarah, Mike">
+            
+            <input type="submit" id="submit-button" value="Nominate for Bandeoki!">
+        </form>
+        
+        <div id="confirmation-message" class="hidden"></div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
